@@ -31,7 +31,8 @@ You can now access your website on http://localhost:8000 :
 
 
 ![](./gatsby_01.png)
----
+
+
 
 
 ## Adding content and Linking Pages
@@ -57,12 +58,11 @@ export default IndexPage
 
 You need to import Link from gatsby-link to use the Link Component and link to other pages - above you see the:
 
-```js
+```html
 <Link to="/page-2/">Go to page 2</Link>
 ```
 
 component, linking our **index.js** page to another page inside the same folder with the name **page-2.js**. Every js file inside the */src/pages* folder will automagically be routed by Gatsby!
----
 
 
 ## Styling your JSX
@@ -80,7 +80,6 @@ const IndexPage = () => (
   </div>
 )
 ```
----
 
 
 ## Adding Interactive Components
@@ -113,7 +112,8 @@ export default Counter
 
 
 ![](./gatsby_02.png)
----
+
+
 
 
 
