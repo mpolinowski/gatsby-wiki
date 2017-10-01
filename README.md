@@ -77,7 +77,7 @@ const IndexPage = () => (
 
 React allows you to add interaction to your page - we want to add a counter, set it's state to 0 on load and have two buttons that use onClick events to increment or decrement the state of the counter.
 
-We can just add a new file */src/pages/counter.js* and link to it from the index page *<Link to="/counter/">Go to Counter</Link>*:
+We can just add a new file */src/pages/counter.js* and link to it from the index page *\<Link to=\"\/counter\/\"\>Go to Counter\<\/Link\>*:
 
 ```js
 import React from 'react'
