@@ -101,6 +101,10 @@ export default Counter
 ```
 
 
+![](./gatsby_02.png)
+
+
+
 ## Build the Static Page
 
 
