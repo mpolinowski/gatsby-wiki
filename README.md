@@ -8,6 +8,14 @@ Install this starter (assuming Gatsby is installed) by running from your CLI:
 gatsby new gatsby-wiki
 ```
 
+1. [Start your Gatsby Development Environment](#start-your-gatsby-development-environment)
+2. [Adding Content and Linking Pages](#adding-content-and-linking-pages)
+3. [Styling your JSX](#styling-your-jsx)
+4. [Adding Interactive Components](#adding-interactive-components)
+5. [Build the Static Page](#build-the-static-page)
+---
+
+
 ## Start your Gatsby development environment
 
 
@@ -23,12 +31,13 @@ You can now access your website on http://localhost:8000 :
 
 
 ![](./gatsby_01.png)
+---
 
 
 ## Adding content and Linking Pages
 
 
-The */src/pages/index.js* file contains regular JSX - add any HTML inside the <div> tag to make it appear inside your website (Gatsby is hot-reloading).
+The */src/pages/index.js* file contains regular JSX - add any HTML inside the /<div/> tag to make it appear inside your website (Gatsby is hot-reloading).
 
 ```js
 import React from 'react'
@@ -53,6 +62,7 @@ You need to import Link from gatsby-link to use the Link Component and link to o
 ```
 
 component, linking our **index.js** page to another page inside the same folder with the name **page-2.js**. Every js file inside the */src/pages* folder will automagically be routed by Gatsby!
+---
 
 
 ## Styling your JSX
@@ -70,6 +80,7 @@ const IndexPage = () => (
   </div>
 )
 ```
+---
 
 
 ## Adding Interactive Components
@@ -77,7 +88,7 @@ const IndexPage = () => (
 
 React allows you to add interaction to your page - we want to add a counter, set it's state to 0 on load and have two buttons that use onClick events to increment or decrement the state of the counter.
 
-We can just add a new file */src/pages/counter.js* and link to it from the index page *\<Link to=\"\/counter\/\"\>Go to Counter\<\/Link\>*:
+We can just add a new file */src/pages/counter.js* and link to it from the index page *\<Link to="/counter/"\>Go to Counter\</Link\>*:
 
 ```js
 import React from 'react'
@@ -102,6 +113,7 @@ export default Counter
 
 
 ![](./gatsby_02.png)
+---
 
 
 
