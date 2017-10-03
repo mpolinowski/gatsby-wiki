@@ -15,7 +15,7 @@ gatsby new gatsby-wiki
 5. [Importing Components to your Sites](#05-importing-components-to-your-sites)
 6. [Passing down Props](#06-passing-down-props)
 7. [Gatsby Plugins](#07-gatsby-plugins)
-8. [Page Layout](#08-single-page-application)
+8. [Single Page Application](#08-single-page-application)
 9. [GraphQL](#09-graphql)
 10. [Adding File Data](#10-adding-file-data)
 11. [Working with Markdown](#11-working-with-markdown)
