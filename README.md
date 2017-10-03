@@ -562,7 +562,7 @@ Now we have Markdown available in GraphQL - as before, just start typing allMard
 Now we can query for the FrontMatter as well as the MD-to-HTML transformed content of each MD file we add to our pages folder:
 
 
-![](./gatsby_09.png)
+![](./gatsby_10.png)
 
 
 
