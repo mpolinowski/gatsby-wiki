@@ -72,6 +72,9 @@ You need to import Link from gatsby-link to use the Link Component and link to o
 component, linking our **index.js** page to another page inside the same folder with the name **page-2.js**. Every js file inside the */src/pages* folder will automagically be routed by Gatsby!
 
 
+![](./gatsby_02.png)
+
+
 
 
 ## 03 Styling your JSX
@@ -126,7 +129,7 @@ export default Counter
 ```
 
 
-![](./gatsby_02.png)
+![](./gatsby_03.png)
 
 
 
@@ -160,7 +163,7 @@ const IndexPage = () => (
 ```
 
 
-![](./gatsby_03.png)
+![](./gatsby_04.png)
 
 
 
@@ -393,33 +396,9 @@ Now we are able to query this data inside the component:
 
 Why is it **data.site.siteMetadata**? Gatsby's graphql debugger is running at http://localhost:8000/___graphql you can also use it to test your queries and see how the results look. Just open the debugger and try out our previous query:
 
-```
-{
-	site {
-      siteMetadata {
-        title
-        author
-        description
-      }
-    }
-}
-```
 
-The result will be:
+![](./gatsby_05.png)
 
-```
-{
-  "data": {
-    "site": {
-      "siteMetadata": {
-        "title": "Gatsby Wiki",
-        "author": "Mike Polinowski",
-        "description": "Trying out Gatsby.js"
-      }
-    }
-  }
-}
-```
 
 
 
