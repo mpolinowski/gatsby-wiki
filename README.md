@@ -524,11 +524,51 @@ Now we can add some JSX that loops through all of our files and outputs the info
 
 
 
-
-
 ## 11 Working with Markdown
-## 12 Build the Static Page
 
+Now we are able to access information about all of our pages. But as mentioned, in the beginning of the last paragraph, we are also able to use **Gatsby Transformer Plugins** to look into files and make their content available to GraphQL.
+
+In this case we want to use Markdown files and transform them, to be able to display their content in our website. The Transformer Plugin needed for this is [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/). First we need to install the plugin:
+
+```
+npm install --save gatsby-transformer-remark
+```
+
+Then create a markdown page inside */src/pages/myfirstpost.md* that contains some **FrontMatter** (metadata in the beginning of the file, that can later be queried by GraphQL) and some text:
+
+
+```
+---
+title: "My first Post"
+author: "Mike Polinowski"
+---
+
+# This is my first mardown Post!
+```
+
+Now we need to add the plugin to */gatsby-config.js* :
+
+```
+`gatsby-transformer-remark`,
+```
+
+Now we have Markdown available in GraphQL - as before, just start typing allMardownRemark (ENTER autocompletes) and then press **CTRL + ENTER** to complete your query:
+
+
+![](./gatsby_09.png)
+
+
+
+Now we can query for the FrontMatter as well as the MD-to-HTML transformed content of each MD file we add to our pages folder:
+
+
+![](./gatsby_09.png)
+
+
+
+
+
+## 12 Build the Static Page
 
 We now want to move our website from the development environment to our webserver. Gatsby offers us a simple command to build render our React.js page into a static website:
 

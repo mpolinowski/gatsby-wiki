@@ -11,6 +11,7 @@
     "gatsby-plugin-offline": "^1.0.9",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-source-filesystem": "^1.5.2",
+    "gatsby-transformer-remark": "^1.7.15",
     "prop-types": "^15.6.0"
   },
   "keywords": [
