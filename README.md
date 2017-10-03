@@ -160,6 +160,10 @@ const IndexPage = () => (
 ```
 
 
+![](./gatsby_03.png)
+
+
+
 
 ## 06 Passing down Props
 
