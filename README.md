@@ -16,7 +16,10 @@ gatsby new gatsby-wiki
 6. [Passing down Props](#06-passing-down-props)
 7. [Gatsby Plugins](#07-gatsby-plugins)
 8. [Page Layout](#08-page-layout)
-X. [Build the Static Page](#0x-build-the-static-page)
+9. [Adding Site Data](#09-adding-site-data)
+10. [Adding File Data](#10-adding-file-data)
+11. [Working with Markdown](#11-working-with-markdown)
+12. [Build the Static Page](#12-build-the-static-page)
 ---
 
 
@@ -330,12 +333,95 @@ module.exports = {
 
 
 
-## 08  Page Layout
+## 08 Page Layout
+
+Gatsby offers an easy way to create Single-Page-Applications (**SPA's**) with it's layout feature. You can find the JSX and CSS inside */src/layout*. The Gatsby Starter, that we are using, already uses a header navbar, that is defined inside the index.js file (and comes with the necessary css).
+
+You can see that the app already uses [React-Helmet](https://github.com/nfl/react-helmet) as a Gatsby plugin. This reusable React component will manage all of your changes to the document \<head\>. Helmet takes plain HTML tags and outputs plain HTML tags.
+
+The layout defines a \<Header /\> component, that - together with the \<Helmet /\> component - is used inside the \<TemplateWrapper /\>
+
+All your content, from the pages that we created so far, is then injected into the Wrapper via the {children} tag. This way, you can create top-navbars, headers, side-navigations and footers, that are then displayed on all of your websites.
 
 
 
+## 09 Adding Site Data
 
-## 0X Build the Static Page
+We can define some global variables inside gatsby-config.js in the root directory of our app:
+
+```js
+module.exports = {
+  siteMetadata: {
+    title: `Gatsby Wiki`,
+    author: `Mike Polinowski`,
+    description: `Trying out Gatsby`
+  }
+}
+```
+
+This Data will be available to every page and can be queried usind **GraphQL**. Just add the following GraphQL query to /src/pages/index.js, to get a hold of those values:
+
+```js
+export const query = graphql`
+  query FirstQuery {
+    site {
+      siteMetadata {
+        title
+        author
+        description
+      }
+    }
+  }
+`
+```
+
+Then we have to inject this {data} into the parent component \<IndexPage /\>:
+
+```js
+const IndexPage = ({data}) =>
+```
+
+Now we are able to query this data inside the component:
+
+```js
+<h1>{data.site.siteMetadata.description}</h1>
+```
+
+Why is it **data.site.siteMetadata**? Gatsby's graphql debugger is running at http://localhost:8000/___graphql you can also use it to test your queries and see how the results look. Just open the debugger and try out our previous query:
+
+```
+{
+	site {
+      siteMetadata {
+        title
+        author
+        description
+      }
+    }
+}
+```
+
+The result will be:
+
+```
+{
+  "data": {
+    "site": {
+      "siteMetadata": {
+        "title": "Gatsby Wiki",
+        "author": "Mike Polinowski",
+        "description": "Trying out Gatsby.js"
+      }
+    }
+  }
+}
+```
+
+
+
+## 10 Adding File Data
+## 11 Working with Markdown
+## 12 Build the Static Page
 
 
 We now want to move our website from the development environment to our webserver. Gatsby offers us a simple command to build render our React.js page into a static website:

@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Gatsby Wiki`,
+    author: `Mike Polinowski`,
+    description: `Trying out Gatsby.js`
   },
   plugins: [
       `gatsby-plugin-react-helmet`,
