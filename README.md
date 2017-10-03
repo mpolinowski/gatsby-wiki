@@ -523,6 +523,11 @@ Now we can add some JSX that loops through all of our files and outputs the info
 ```
 
 
+![](./gatsby_09.png)
+
+
+
+
 
 ## 11 Working with Markdown
 
@@ -555,14 +560,14 @@ Now we need to add the plugin to */gatsby-config.js* :
 Now we have Markdown available in GraphQL - as before, just start typing allMardownRemark (ENTER autocompletes) and then press **CTRL + ENTER** to complete your query:
 
 
-![](./gatsby_09.png)
+![](./gatsby_10.png)
 
 
 
 Now we can query for the FrontMatter as well as the MD-to-HTML transformed content of each MD file we add to our pages folder:
 
 
-![](./gatsby_10.png)
+![](./gatsby_11.png)
 
 
 
