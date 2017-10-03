@@ -16,7 +16,7 @@ gatsby new gatsby-wiki
 6. [Passing down Props](#06-passing-down-props)
 7. [Gatsby Plugins](#07-gatsby-plugins)
 8. [Page Layout](#08-page-layout)
-9. [Adding Site Data](#09-adding-site-data)
+9. [GraphQL](#09-graphql)
 10. [Adding File Data](#10-adding-file-data)
 11. [Working with Markdown](#11-working-with-markdown)
 12. [Build the Static Page](#12-build-the-static-page)
@@ -345,7 +345,7 @@ All your content, from the pages that we created so far, is then injected into t
 
 
 
-## 09 Adding Site Data
+## 09 GraphQL
 
 We can define some global variables inside gatsby-config.js in the root directory of our app:
 
