@@ -366,7 +366,7 @@ module.exports = {
 }
 ```
 
-This Data will be available to every page and can be queried usind **GraphQL**. Just add the following GraphQL query to /src/pages/index.js, to get a hold of those values:
+This Data will be available to every page and can be queried usind **GraphQL**. Just add the following GraphQL query to */src/pages/index.js*, to get a hold of those values:
 
 ```js
 export const query = graphql`
@@ -382,7 +382,7 @@ export const query = graphql`
 `
 ```
 
-Then we have to inject this {data} into the parent component \<IndexPage /\>:
+Then we have to inject this **{data}** into the parent component \<IndexPage /\>:
 
 ```js
 const IndexPage = ({data}) =>
@@ -403,6 +403,129 @@ Why is it **data.site.siteMetadata**? Gatsby's graphql debugger is running at ht
 
 
 ## 10 Adding File Data
+
+With Gatsby you can use GraphQL to query Data from your files directly. Transformer plugins transform File nodes into various other types of data e.g. [gatsby-transformer-json](https://www.gatsbyjs.org/packages/gatsby-transformer-json/) transforms JSON files into JSON data nodes and [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/) transforms markdown files into MarkdownRemark nodes from which you can query an HTML representation of the markdown.
+
+In this case we will use [gatsby-source-filesystem](https://www.gatsbyjs.org/packages/gatsby-source-filesystem/) to create file nodes from our file system.
+
+```
+npm install --save gatsby-source-filesystem
+```
+
+After installation, add the plugin to gatsby-config.js. You can have multiple instances of this plugin to read source nodes from different locations on your filesystem.
+
+The following sets up the Jekyll pattern of having a *pages* directory for **Markdown files** and a *data* directory for **.json**, **.yaml**, **.csv**.:
+
+```js
+{
+  resolve: `gatsby-source-filesystem`,
+  options: {
+    name: `pages`,
+    path: `${__dirname}/src/pages/`,
+  },
+},
+{
+  resolve: `gatsby-source-filesystem`,
+  options: {
+    name: `data`,
+    path: `${__dirname}/src/data/`,
+  },
+}
+```
+
+You can now open the GraphiQL debugger put in curly brackets - when you start typing allFiles, it should offer autocompletion. Just press enter to accept and **CTRL + ENTER** again to fill out the query for all page ID's:
+
+```
+{
+	allFile {
+	  edges {
+	    node {
+	      id
+	    }
+	  }
+	}
+}
+```
+
+
+![](./gatsby_06.png)
+
+
+When you delete *id* and press **CTRL + SPACE**, you will be given a drop down menu with all options that you can query:
+
+
+![](./gatsby_07.png)
+
+
+Using the *parent*, *children* and *relativePath* attribute enables you to create e.g. a breadcrumb navigation:
+
+
+![](./gatsby_08.png)
+
+
+
+We can now add a GraphQL query to */src/pages/page-2.js* to loop through all of our pages and display some data:
+
+```js
+export const query = graphql`
+  query MyFilesQuery {
+    allFile {
+      edges {
+          node {
+            relativePath
+            prettySize
+            extension
+            birthTime(fromNow: true)
+        }
+      }
+    }
+  }
+`
+```
+
+Don't forget to inject the **{data}** to the page component:
+
+```js
+const SecondPage = ({data}) =>
+```
+
+Now we can add some JSX that loops through all of our files and outputs the information inside a \<table\>
+
+```js
+<table>
+  <thead>
+    <tr>
+      <th>relativePath</th>
+      <th>prettySize</th>
+      <th>extension</th>
+      <th>birthTime</th>
+    </tr>
+  </thead>
+  <tbody>
+    {data.allFile.edges.map(({ node }) =>
+      <tr>
+        <td>
+          {node.relativePath}
+        </td>
+        <td>
+          {node.prettySize}
+        </td>
+        <td>
+          {node.extension}
+        </td>
+        <td>
+          {node.birthTime}
+        </td>
+      </tr>
+    )}
+  </tbody>
+</table>
+```
+
+
+
+
+
 ## 11 Working with Markdown
 ## 12 Build the Static Page
 
