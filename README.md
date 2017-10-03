@@ -8,17 +8,19 @@ Install this starter (assuming Gatsby is installed) by running from your CLI:
 gatsby new gatsby-wiki
 ```
 
-1. [Start your Gatsby Development Environment](#start-your-gatsby-development-environment)
-2. [Adding Content and Linking Pages](#adding-content-and-linking-pages)
-3. [Styling your JSX](#styling-your-jsx)
-4. [Adding Interactive Components](#adding-interactive-components)
-5. [Importing Components to your Sites](#importing-components-to-your-sites)
-6. [Passing down Props](#passing-down-props)
-7. [Build the Static Page](#build-the-static-page)
+1. [Start your Gatsby Development Environment](#01-start-your-gatsby-development-environment)
+2. [Adding Content and Linking Pages](#02-adding-content-and-linking-pages)
+3. [Styling your JSX](#03-styling-your-jsx)
+4. [Adding Interactive Components](#04-adding-interactive-components)
+5. [Importing Components to your Sites](#05-importing-components-to-your-sites)
+6. [Passing down Props](#06-passing-down-props)
+7. [Gatsby Plugins](#07-gatsby-plugins)
+8. [Page Layout](#08-page-layout)
+X. [Build the Static Page](#0x-build-the-static-page)
 ---
 
 
-## Start your Gatsby development environment
+## 01 Start your Gatsby development environment
 
 
 Now change into your site directory and run the Gatsby development environment using npm:
@@ -37,7 +39,7 @@ You can now access your website on http://localhost:8000 :
 
 
 
-## Adding content and Linking Pages
+## 02 Adding content and Linking Pages
 
 
 The */src/pages/index.js* file contains regular JSX - add any HTML inside the /<div/> tag to make it appear inside your website (Gatsby is hot-reloading).
@@ -67,7 +69,9 @@ You need to import Link from gatsby-link to use the Link Component and link to o
 component, linking our **index.js** page to another page inside the same folder with the name **page-2.js**. Every js file inside the */src/pages* folder will automagically be routed by Gatsby!
 
 
-## Styling your JSX
+
+
+## 03 Styling your JSX
 
 
 You can use simply add inline styles to your component, e.g.
@@ -83,8 +87,14 @@ const IndexPage = () => (
 )
 ```
 
+For some advanced styles check out the Gatsby plugins [Glamor](https://www.gatsbyjs.org/packages/gatsby-plugin-glamor/) or [Styled Components](https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/).
 
-## Adding Interactive Components
+How to install those plugins is explained below - [Gatsby Plugins](#07-gatsby-plugins) .
+
+
+
+
+## 04 Adding Interactive Components
 
 
 React allows you to add interaction to your page - we want to add a counter, set it's state to 0 on load and have two buttons that use onClick events to increment or decrement the state of the counter.
@@ -118,7 +128,7 @@ export default Counter
 
 
 
-## Importing Components to your Sites
+## 05 Importing Components to your Sites
 
 
 So far, we used every file inside the pages directory as a separate site. But React.js allows us to take the default component - that is exported at the bottom of the file - and import it into another page. For example, we could take the \<Counter /\> component above and add it to the index page (instead of just linking to it).
@@ -146,7 +156,9 @@ const IndexPage = () => (
 )
 ```
 
-## Passing down Props
+
+
+## 06 Passing down Props
 
 
 We can now pass properties, from the parent component, down to the Counter component - e.g. we can change the title of our counter, depending on the page it is displayed on:
@@ -220,7 +232,110 @@ Counter.defaultProps = {
 
 
 
-## Build the Static Page
+## 07 Gatsby Plugins
+
+[Plugins](https://www.gatsbyjs.org/docs/plugins/) are Node.js packages that implement Gatsby APIs. They enable you to easily solve common website build problems e.g. setup Sass, add markdown support, process images, etc.
+
+
+### Progress Animation
+
+In this example, we want to use a plugin for [NProgress.js](http://ricostacruz.com/nprogress/) to add a loading animation to our site. You install the [NProgress plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-nprogress/) with npm:
+
+```
+npm install --save gatsby-plugin-nprogress
+```
+
+Now we have to tell Gatsby to use the plugin by editing (creating if file doesn't exist) the gatsby-config.js file inside the root directory of our app. Coming from the starter template, we already have the react-helmet plugin installed (This plugin is described below: [Page Layout](#08-page-layout)). Now simply add the gatsby-plugin-nprogress to the array:
+
+```js
+module.exports = {
+  siteMetadata: {
+    title: `Gatsby Wiki`,
+  },
+  plugins: [
+      `gatsby-plugin-react-helmet`,
+      {
+        resolve: `gatsby-plugin-nprogress`,
+        options: {
+          // Setting a color is optional.
+          color: `rebeccapurple`,
+          // Disable the loading spinner.
+          showSpinner: false,
+      }
+    }
+  ],
+}
+```
+
+### Offline Support and Manifest
+
+We now want to add a Serviceworker to our site that helps us cache important parts of our application, giving us a certain amount of offline support - as the [Offline Plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-offline/) tells us, we will also install the [Manifest Plugin](https://www.gatsbyjs.org/packages/gatsby-plugin-manifest/) (make sure, that it is listed before the Offline Plugin!).
+
+```
+npm install --save gatsby-plugin-manifest
+
+npm install --save gatsby-plugin-offline
+```
+
+Now we add them to our Gatsby configuration:
+
+
+```js
+module.exports = {
+  siteMetadata: {
+    title: `Gatsby Wiki`,
+  },
+  plugins: [
+      `gatsby-plugin-react-helmet`,
+      {
+        resolve: `gatsby-plugin-nprogress`,
+        options: {
+          // Setting a color is optional.
+          color: `rebeccapurple`,
+          // Disable the loading spinner.
+          showSpinner: false,
+      }
+    },
+    {
+    resolve: `gatsby-plugin-manifest`,
+      options: {
+          name: "Gatsby Wiki",
+          short_name: "Gatsby Wiki",
+          start_url: "/",
+          background_color: "white",
+          theme_color: "rebeccapurple",
+          display: "minimal-ui",
+          icons: [
+            {
+              // Everything in /static will be copied to an equivalent
+              // directory in /public during development and build, so
+              // assuming your favicons are in /static/favicons,
+              // you can reference them here
+              src: `/apple-touch-icon.png`,
+              sizes: `180x180`,
+              type: `image/png`,
+            },
+            {
+              src: `/favicon.ico`,
+              sizes: `256x256`,
+              type: `image/png`,
+            },
+          ],
+        },
+      },
+      `gatsby-plugin-offline`,
+  ],
+}
+```
+
+
+
+## 08  Page Layout
+
+
+
+
+## 0X Build the Static Page
 
 
 We now want to move our website from the development environment to our webserver. Gatsby offers us a simple command to build render our React.js page into a static website:

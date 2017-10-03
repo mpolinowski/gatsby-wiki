@@ -9,7 +9,9 @@ class Counter extends React.Component {
   render() {
     return <div>
             <h3 style={{color: this.props.color}}>{this.props.header}</h3>
-            <p>current count: {this.state.count}</p>
+            <p>An example for an interactive React Component</p>
+            <br/>
+            <h4>Current Count: {this.state.count}</h4>
             <button onClick={() => this.setState({ count: this.state.count + 1 })}>plus</button>
             <button onClick={() => this.setState({ count: this.state.count - 1 })}>minus</button>
           </div>
@@ -19,7 +21,7 @@ class Counter extends React.Component {
 
 // Specifies the default values for props:
 Counter.defaultProps = {
-header: 'Default Counter',
+header: 'This is the Counter component itself',
 color: 'black'
 }
 

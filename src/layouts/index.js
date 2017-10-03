@@ -27,7 +27,7 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby
+          Wiki Starter
         </Link>
       </h1>
     </div>
@@ -37,10 +37,10 @@ const Header = () => (
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title="Gatsby Wiki"
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: 'INSTAR Knowledgebase' },
+        { name: 'keywords', content: 'INSTAR, IP Cameras' },
       ]}
     />
     <Header />
