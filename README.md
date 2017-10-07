@@ -502,8 +502,8 @@ Now we can add some JSX that loops through all of our files and outputs the info
     </tr>
   </thead>
   <tbody>
-    {data.allFile.edges.map(({ node }) =>
-      <tr>
+    {data.allFile.edges.map(({node}, index) =>
+      <tr key={index}>
         <td>
           {node.relativePath}
         </td>
