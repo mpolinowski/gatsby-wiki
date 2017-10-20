@@ -8,7 +8,7 @@ import './index.css'
 const Header = () => (
   <div
     style={{
-      background: 'rebeccapurple',
+      background: '#414950',
       marginBottom: '1.45rem',
     }}
   >
@@ -23,7 +23,7 @@ const Header = () => (
         <Link
           to="/"
           style={{
-            color: 'white',
+            color: 'silver',
             textDecoration: 'none',
           }}
         >
