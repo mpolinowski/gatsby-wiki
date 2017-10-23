@@ -15,7 +15,10 @@
     "gatsby-source-filesystem": "^1.5.2",
     "gatsby-transformer-remark": "^1.7.15",
     "gatsby-transformer-sharp": "^1.6.10",
-    "prop-types": "^15.6.0"
+    "material-ui": "^1.0.0-beta.17",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "prop-types": "^15.6.0",
+    "typeface-roboto": "0.0.41"
   },
   "keywords": [
     "gatsby"

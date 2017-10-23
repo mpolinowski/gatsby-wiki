@@ -19,7 +19,8 @@ gatsby new gatsby-wiki
 9. [GraphQL](#09-graphql)
 10. [Adding File Data](#10-adding-file-data)
 11. [Working with Markdown](#11-working-with-markdown)
-12. [Build the Static Page](#12-build-the-static-page)
+12. [Adding Material-UI](#12-adding-material-ui)
+XX. [Build the Static Page](#xx-build-the-static-page)
 ---
 
 
@@ -572,8 +573,42 @@ Now we can query for the FrontMatter as well as the MD-to-HTML transformed conte
 
 
 
+## 12 Adding Material-UI
 
-## 12 Build the Static Page
+To make our life easier, we want to include ready-to-use material design components from the guys @ [Material-UI](https://material-ui-next.com/getting-started/installation/). We are going to install the beta version of v.1.0.0 - which also requires the [Roboto Fontface](https://material-ui-next.com/style/typography/#general) and the [Material-UI Icons](https://www.npmjs.com/package/material-ui-icons):
+
+```
+npm install material-ui@next --save
+
+npm install typeface-roboto --save
+
+npm install material-ui-icons --save
+```
+
+We can now easily import Material-UI components into our app:
+
+```js
+import React from 'react'
+import { render } from 'react-dom'
+import Button from 'material-ui/Button'
+import 'typeface-roboto'
+
+function AppWithButton() {
+  return (
+    <Button>
+      Hello World
+    </Button>
+  );
+}
+
+render(<AppWithButton />, document.querySelector('#app'));
+```
+
+
+
+
+
+## XX Build the Static Page
 
 We now want to move our website from the development environment to our webserver. Gatsby offers us a simple command to build render our React.js page into a static website:
 
