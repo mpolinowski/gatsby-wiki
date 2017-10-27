@@ -9,7 +9,9 @@ const IndexPage = ({data}) => (
     <p>Welcome to our new Gatsby site.</p>
     <p>Is this the right framework to rebuild our Wiki on? I don't know yet...</p>
     <Link to="/search/"><button>Go to ElasticSearch</button></Link><br/><br/>
-    <Link to="/page-2/"><button>Go to Page 2</button></Link><br/><br/>
+    <Link to="/page-1/"><button>Go to Enhanced Table</button></Link><br/><br/>
+    <Link to="/page-2/"><button>Go to GraphQL Table</button></Link><br/><br/>
+    <Link to="/nestedroutes/"><button>Go to Nested Routes</button></Link><br/><br/>
     <br/><br/><br/><br/>
     <Counter header="This <Counter /> is embedded inside <IndexPage />" color="rebeccapurple" /><br/><br/><br/><br/>
     <Link to="/counter/"><button>See Counter Component itself</button></Link>

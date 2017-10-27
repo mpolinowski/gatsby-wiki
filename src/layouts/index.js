@@ -19,7 +19,7 @@ import TextField from 'material-ui/TextField'
 
 import { mailFolderListItems, otherMailFolderListItems } from './tileData'
 import NestedList from './tileDataClass'
-import Logo from './instar_250x65.png'
+import Logo from '../static/instar_250x65.png'
 import './index.css'
 
 const drawerWidth = 250
