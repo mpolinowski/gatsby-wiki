@@ -36,19 +36,19 @@ class NestedList extends React.Component {
       <List subheader={<ListSubheader>Motion Detection</ListSubheader>}>
         <ListItem button>
           <ListItemIcon>
-            <SendIcon style={{ color: "white" }} />
+            <SendIcon />
           </ListItemIcon>
           <ListItemText inset primary="Setup" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <DraftsIcon style={{ color: "white" }} />
+            <DraftsIcon />
           </ListItemIcon>
           <ListItemText inset primary="Recording" />
         </ListItem>
         <ListItem button onClick={this.handleClick}>
           <ListItemIcon>
-            <InboxIcon style={{ color: "white" }} />
+            <InboxIcon />
           </ListItemIcon>
           <ListItemText inset primary="Notification" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
@@ -56,19 +56,19 @@ class NestedList extends React.Component {
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder style={{ color: "white" }} />
+              <StarBorder />
             </ListItemIcon>
             <ListItemText inset primary="1080p Series" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder style={{ color: "white" }} />
+              <StarBorder />
             </ListItemIcon>
             <ListItemText inset primary="720p Series" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder style={{ color: "white" }} />
+              <StarBorder />
             </ListItemIcon>
             <ListItemText inset primary="VGA Series" />
           </ListItem>
