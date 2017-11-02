@@ -23,8 +23,8 @@ const styles = theme => ({
   },
 });
 
-class NestedList extends React.Component {
-  state = { open: true };
+class DrawerMDSDCard extends React.Component {
+  state = { open: false };
 
   handleClick = () => {
     this.setState({ open: !this.state.open });
@@ -33,24 +33,12 @@ class NestedList extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <List subheader={<ListSubheader>Motion Detection</ListSubheader>}>
-        <ListItem button>
-          <ListItemIcon>
-            <SendIcon />
-          </ListItemIcon>
-          <ListItemText inset primary="Setup" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <DraftsIcon />
-          </ListItemIcon>
-          <ListItemText inset primary="Recording" />
-        </ListItem>
+      <div>
         <ListItem button onClick={this.handleClick}>
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
-          <ListItemText inset primary="Notification" />
+          <ListItemText inset primary="SD Card Access" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
@@ -58,24 +46,48 @@ class NestedList extends React.Component {
             <ListItemIcon>
               <StarBorder />
             </ListItemIcon>
-            <ListItemText inset primary="1080p Series" />
+            <ListItemText inset primary="Bitkinex" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <StarBorder />
             </ListItemIcon>
-            <ListItemText inset primary="720p Series" />
+            <ListItemText inset primary="CuteFTP" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <StarBorder />
             </ListItemIcon>
-            <ListItemText inset primary="VGA Series" />
+            <ListItemText inset primary="DownThemAll" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <StarBorder />
+            </ListItemIcon>
+            <ListItemText inset primary="Interarchy" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <StarBorder />
+            </ListItemIcon>
+            <ListItemText inset primary="DeepVacuum" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <StarBorder />
+            </ListItemIcon>
+            <ListItemText inset primary="SiteSucker" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <StarBorder />
+            </ListItemIcon>
+            <ListItemText inset primary="SimpleWget" />
           </ListItem>
         </Collapse>
-      </List>
+      </div>
     );
   }
 }
 
-export default withStyles(styles)(NestedList);
+export default withStyles(styles)(DrawerMDSDCard);

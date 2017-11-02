@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from 'material-ui/styles'
 import Drawer from 'material-ui/Drawer'
 import AppBar from 'material-ui/AppBar'
 import Toolbar from 'material-ui/Toolbar'
@@ -13,16 +13,14 @@ import Typography from 'material-ui/Typography'
 import IconButton from 'material-ui/IconButton'
 import SearchIcon from 'material-ui-icons/Search'
 import Hidden from 'material-ui/Hidden'
-import Divider from 'material-ui/Divider'
 import MenuIcon from 'material-ui-icons/Menu'
 import MenuItem from 'material-ui/Menu/MenuItem'
 import ListSubheader from 'material-ui/List/ListSubheader'
 
-import { mailFolderListItems, otherMailFolderListItems } from '../data/tileData'
-import NestedList from '../data/tileDataClass'
 import Logo from '../static/instar_250x65.png'
+import DrawerMain from '../navigation/DrawerMain'
 
-const drawerWidth = 250;
+const drawerWidth = 270;
 
 const styles = theme => ({
   root: {
@@ -76,9 +74,7 @@ class ResponsiveDrawer extends React.Component {
     const drawer = (
       <div>
         <Link to="/"><img src={Logo} alt="INSTAR Deutschland GmbH" /></Link>
-        <List>{mailFolderListItems}</List>
-        <Divider />
-        <List>{otherMailFolderListItems}</List>
+        <List><DrawerMain /></List>
       </div>
     );
 
