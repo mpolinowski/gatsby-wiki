@@ -22,7 +22,7 @@ import { mailFolderListItems, otherMailFolderListItems } from '../data/tileData'
 import NestedList from '../data/tileDataClass'
 import Logo from '../static/instar_250x65.png'
 
-const drawerWidth = 240;
+const drawerWidth = 250;
 
 const styles = theme => ({
   root: {
@@ -53,16 +53,7 @@ const styles = theme => ({
     [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       position: 'relative',
-      height: '100%',
-    },
-    shadowContainer: {
-      shadowColor: '#000000',
-      shadowOffset: {
-        width: 0,
-        height: 3
-      },
-      shadowRadius: 5,
-      shadowOpacity: 1.0
+      bottom: 0,
     }
   },
   input: {
@@ -84,38 +75,33 @@ class ResponsiveDrawer extends React.Component {
 
     const drawer = (
       <div>
-        <Link to="/"><img src={Logo} alt="INSTAR Deutschland GmbH" className="shadowContainer" /></Link>
+        <Link to="/"><img src={Logo} alt="INSTAR Deutschland GmbH" /></Link>
         <List>{mailFolderListItems}</List>
         <Divider />
         <List>{otherMailFolderListItems}</List>
       </div>
     );
-    // http://jamesknelson.com/learn-raw-react-ridiculously-simple-forms/
+
     return (
       <div>
-        <AppBar className={classes.appBar}>
+        <AppBar className={classes.appBar} color="default">
           <Toolbar>
             <IconButton
-              color="contrast"
+              color="inherit"
               aria-label="open drawer"
               onClick={this.handleDrawerToggle}
               className={classes.navIconHide}
             >
               <MenuIcon />
             </IconButton>
-            <Typography type="title" color="inherit" className={classes.flex} noWrap>
+            <Typography type="title" className={classes.flex} noWrap>
               INSTAR Wiki
             </Typography>
-            <Input
-              placeholder="Search Input"
-              className={classes.input}
-              inputProps={{
-                'aria-label': 'Description',
-              }}
-            />
-            <IconButton className={classes.button} aria-label="Delete">
-              <SearchIcon />
-            </IconButton>
+            <Link to="/search">
+              <IconButton className={classes.button} aria-label="Delete">
+                <SearchIcon />
+              </IconButton>
+            </Link>
           </Toolbar>
         </AppBar>
         <Hidden mdUp>

@@ -1,6 +1,9 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
+
+import { withStyles } from 'material-ui/styles'
+import Button from 'material-ui/Button'
 
 const SecondPage = ({data}) => (
   <div>
@@ -36,7 +39,7 @@ const SecondPage = ({data}) => (
       </tbody>
     </table>
     <br/><br/>
-    <Link to="/"><button>Go back to the homepage</button></Link>
+    <Link to="/" style={{ textDecoration: 'none' }}><Button raised color="primary">Go back to the homepage</Button></Link>
   </div>
 )
 

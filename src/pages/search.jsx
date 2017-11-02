@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Link from 'gatsby-link'
 import elasticsearch from 'elasticsearch';
 
+import { withStyles } from 'material-ui/styles'
+import Button from 'material-ui/Button'
+
 const connectionString = 'localhost:9200';
 const _index = 'wiki2_de_2017_09_09';
 const _type = 'article';
@@ -71,8 +74,7 @@ const SearchResults = ({results}) => (
         )}
       </tbody>
     </table>
-    <br/><br/>
-    <Link to="/"><button>Go back to the homepage</button></Link>
+    <br/><br/><Link to="/" style={{ textDecoration: 'none' }}><Button raised color="primary">Go back to the homepage</Button></Link>
   </div>
 )
 
