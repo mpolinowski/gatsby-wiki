@@ -16,10 +16,10 @@ const ResultCards = ({image, title, abstract, link}) => (
           title={abstract}
         />
         <CardContent>
-          <Typography type="headline" component="h4">
+          <Typography type="headline" component="h4" style={{ minHeight: 60, marginBottom: "10px" }}>
             {title}
           </Typography>
-          <Typography component="p">
+          <Typography component="p" style={{ minHeight: 50, marginBottom: "10px" }}>
             {abstract}
           </Typography>
         </CardContent>
