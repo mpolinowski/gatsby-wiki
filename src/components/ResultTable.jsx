@@ -3,11 +3,7 @@ import Link from 'gatsby-link'
 import elasticsearch from 'elasticsearch'
 
 import { withStyles } from 'material-ui/styles'
-import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
-import Grid from 'material-ui/Grid'
 import Button from 'material-ui/Button'
-
-import ResultCards from '../components/ResultCards'
 
 const connectionString = 'localhost:9200'
 const _index = 'wiki2_de_2017_09_09'
@@ -17,11 +13,6 @@ let client = new elasticsearch.Client({
   host: connectionString,
   log: "trace"
 })
-
-const rootStyle = {
-    flexGrow: 1,
-    marginTop: 30,
-  }
 
 export class Search extends Component {
   constructor(props) {
@@ -66,22 +57,36 @@ export class Search extends Component {
 
 const SearchResults = ({results}) => (
   <div className="search_results">
-  <br/><hr/>
+    <hr />
 
-  <div className={rootStyle}>
-    <Grid container spacing={24}>
-      {results.map((result , i) =>
-        <ResultCards key={i}
+    <table>
+      <thead>
+        <tr>
+          <th>Thumb</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        {results.map((result , i) =>
+          <ResultRow key={i}
                      image={result._source.image}
-                     title={result._source.title2}
-                     link={result._source.link}
-                     abstract={result._source.abstract}/>
-      )}
-
-      </Grid>
-    </div>
+                     title={result._source.title2} />
+        )}
+      </tbody>
+    </table>
     <br/><br/><Link to="/" style={{ textDecoration: 'none' }}><Button raised color="primary">Go back to the homepage</Button></Link>
   </div>
+)
+
+const ResultRow = ({ title, image }) => (
+  <tr>
+    <td>
+      <img src={image} />
+    </td>
+    <td>
+      <p>{title}</p>
+    </td>
+  </tr>
 )
 
 export default Search

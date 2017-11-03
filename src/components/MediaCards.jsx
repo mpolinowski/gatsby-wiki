@@ -24,7 +24,7 @@ const styles = theme => ({
 })
 
 function MediaCards(props) {
-  const { classes } = props;
+  const { classes } = props
   return (
     <div className={classes.root}>
       <Grid container spacing={24}>
@@ -169,4 +169,4 @@ MediaCards.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(MediaCards);
+export default withStyles(styles)(MediaCards)
