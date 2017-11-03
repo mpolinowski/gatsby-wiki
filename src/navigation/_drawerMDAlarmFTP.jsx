@@ -6,7 +6,6 @@ import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
-import NotificationsActive from 'material-ui-icons/NotificationsActive'
 import NavigateNext from 'material-ui-icons/NavigateNext'
 
 const styles = theme => ({
@@ -27,10 +26,7 @@ class DrawerMDAlarmFTP extends React.Component {
     return (
       <div>
         <ListItem button onClick={this.handleClick}>
-          <ListItemIcon>
-            <NotificationsActive />
-          </ListItemIcon>
-          <ListItemText inset primary="Alarm FTP Upload" />
+          <ListItemText primary="Alarm FTP Upload" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>

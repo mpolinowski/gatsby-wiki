@@ -54,10 +54,7 @@ class DrawerMD extends React.Component {
           <DrawerMDNotification />
 
           <ListItem button>
-            <ListItemIcon>
-              <NotificationsActive />
-            </ListItemIcon>
-            <ListItemText inset primary="Video Recording" />
+            <ListItemText primary="Video Recording" />
           </ListItem>
 
           <DrawerMDSDCard />
@@ -65,16 +62,10 @@ class DrawerMD extends React.Component {
           <DrawerMDRouterFTP />
 
           <ListItem button>
-            <ListItemIcon>
-              <NotificationsActive />
-            </ListItemIcon>
-            <ListItemText inset primary="FTP Server Setup" />
+            <ListItemText primary="FTP Server Setup" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <NotificationsActive />
-            </ListItemIcon>
-            <ListItemText inset primary="Alarmserver" />
+            <ListItemText primary="Alarmserver" />
           </ListItem>
 
           <DrawerMDCloud />

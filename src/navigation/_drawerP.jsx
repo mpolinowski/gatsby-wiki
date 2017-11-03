@@ -52,62 +52,35 @@ class DrawerIA extends React.Component {
           <DrawerPOutdoorCameras />
 
           <ListItem button>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Lenses" />
+            <ListItemText primary="Lenses" />
           </ListItem>
 
           <DrawerPSoftware />
           <DrawerPWebUserInterface />
 
           <ListItem button>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="IN-LAN" />
+            <ListItemText primary="IN-LAN" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="IN-PoE" />
+            <ListItemText primary="IN-PoE" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="IN-Route" />
+            <ListItemText primary="IN-Route" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="IN-Motion" />
+            <ListItemText primary="IN-Motion" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="IN-Frared" />
+            <ListItemText primary="IN-Frared" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="IN-Mikro" />
+            <ListItemText primary="IN-Mikro" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Downloads" />
+            <ListItemText primary="Downloads" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Usermanuals" />
+            <ListItemText primary="Usermanuals" />
           </ListItem>
 
         </Collapse>

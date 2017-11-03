@@ -4,7 +4,6 @@ import { withStyles } from 'material-ui/styles'
 import ListSubheader from 'material-ui/List/ListSubheader'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
-import SettingsIcon from 'material-ui-icons/Settings'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
 import NavigateNext from 'material-ui-icons/NavigateNext'
@@ -27,10 +26,7 @@ class DrawerPSoftware extends React.Component {
     return (
       <div>
         <ListItem button onClick={this.handleClick}>
-          <ListItemIcon>
-            <SettingsIcon />
-          </ListItemIcon>
-          <ListItemText inset primary="WebUI and Firmware Update" />
+          <ListItemText primary="WebUI and Firmware Update" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>

@@ -37,74 +37,44 @@ class DrawerQI extends React.Component {
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
 
           <ListItem button>
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="How does an IP Camera Work" />
+            <ListItemText primary="How does an IP Camera Work" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="After Unpacking" />
+            <ListItemText primary="After Unpacking" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="First Steps" />
+            <ListItemText primary="First Steps" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Power over Ethernet" />
+            <ListItemText primary="Power over Ethernet" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Powerline" />
+            <ListItemText primary="Powerline" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Direct LAN Connection" />
+            <ListItemText primary="Direct LAN Connection" />
           </ListItem>
 
           <DrawerQICameraScanner />
 
           <ListItem button>
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Language Selection" />
+            <ListItemText primary="Language Selection" />
           </ListItem>
 
           <DrawerQILiveVideo />
 
           <ListItem button>
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Creating User Accounts" />
+            <ListItemText primary="Creating User Accounts" />
           </ListItem>
 
           <DrawerQIUpdate />
           <DrawerQIBrowserHistory />
 
           <ListItem button>
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Wireless Connection" />
+            <ListItemText primary="Wireless Connection" />
           </ListItem>
           <ListItem button>
-            <ListItemIcon>
-              <BuildIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="ONVIF" />
+            <ListItemText primary="ONVIF" />
           </ListItem>
 
         </Collapse>

@@ -4,7 +4,6 @@ import { withStyles } from 'material-ui/styles'
 import ListSubheader from 'material-ui/List/ListSubheader'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
-import SecurityIcon from 'material-ui-icons/Security'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
 import Divider from 'material-ui/Divider'
@@ -28,10 +27,7 @@ class DrawerAUWebsiteIntegration extends React.Component {
     return (
       <div>
         <ListItem button onClick={this.handleClick}>
-          <ListItemIcon>
-            <SecurityIcon />
-          </ListItemIcon>
-          <ListItemText inset primary="Website Integration" />
+          <ListItemText primary="Website Integration" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>

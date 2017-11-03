@@ -36,29 +36,20 @@ class DrawerQI extends React.Component {
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
 
           <ListItem button>
-            <ListItemIcon>
-              <SecurityIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="VPN Tunnel" />
+            <ListItemText primary="VPN Tunnel" />
           </ListItem>
 
           <DrawerAUWebsiteIntegration />
           <DrawerAUCGIs />
 
           <ListItem button>
-            <ListItemIcon>
-              <SecurityIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Restore WebUI" />
+            <ListItemText primary="Restore WebUI" />
           </ListItem>
 
           <DrawerAURestoreFW />
 
           <ListItem button>
-            <ListItemIcon>
-              <SecurityIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Analogue vs Digital" />
+            <ListItemText primary="Analogue vs Digital" />
           </ListItem>
 
         </Collapse>

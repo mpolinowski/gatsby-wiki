@@ -4,7 +4,6 @@ import { withStyles } from 'material-ui/styles'
 import ListSubheader from 'material-ui/List/ListSubheader'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
-import BuildIcon from 'material-ui-icons/Build'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
 import NavigateNext from 'material-ui-icons/NavigateNext'
@@ -27,10 +26,7 @@ class DrawerQILiveVideo extends React.Component {
     return (
       <div>
         <ListItem button onClick={this.handleClick}>
-          <ListItemIcon>
-            <BuildIcon />
-          </ListItemIcon>
-          <ListItemText inset primary="Live Video (Flash)" />
+          <ListItemText primary="Live Video (Flash)" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>

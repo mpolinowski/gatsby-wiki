@@ -48,20 +48,14 @@ class DrawerIA extends React.Component {
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
 
           <ListItem button>
-            <ListItemIcon>
-              <PublicIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="The P2P Service" />
+            <ListItemText primary="The P2P Service" />
           </ListItem>
 
           <DrawerIADDNSService />
           <DrawerIAPortForwarding />
 
           <ListItem button>
-            <ListItemIcon>
-              <PublicIcon />
-            </ListItemIcon>
-            <ListItemText inset primary="Mobile Access" />
+            <ListItemText primary="Mobile Access" />
           </ListItem>
 
           <DrawerIAThirdDDNS />

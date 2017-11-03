@@ -6,7 +6,6 @@ import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
 import InboxIcon from 'material-ui-icons/MoveToInbox'
 import DraftsIcon from 'material-ui-icons/Drafts'
-import PublicIcon from 'material-ui-icons/Public'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
 import Divider from 'material-ui/Divider'
@@ -36,10 +35,7 @@ class DrawerIAPortForwarding extends React.Component {
     return (
       <div>
         <ListItem button onClick={this.handleClick}>
-          <ListItemIcon>
-            <PublicIcon />
-          </ListItemIcon>
-          <ListItemText inset primary="Port Forwarding" />
+          <ListItemText primary="Port Forwarding" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
