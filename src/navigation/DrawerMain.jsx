@@ -49,7 +49,7 @@ class NestedList extends React.Component {
 
         <Divider />
 
-        <List subheader={<ListSubheader className={classes.listSubheader}>Remote Access</ListSubheader>}>
+        <List subheader={<ListSubheader className={classes.listSubheader}>Internet Access</ListSubheader>}>
           <DrawerIA />
         </List>
 

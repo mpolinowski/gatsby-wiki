@@ -4,6 +4,8 @@ import { withStyles } from 'material-ui/styles'
 import ListSubheader from 'material-ui/List/ListSubheader'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
+import ExpandLess from 'material-ui-icons/ExpandLess'
+import ExpandMore from 'material-ui-icons/ExpandMore'
 import NotificationsActive from 'material-ui-icons/NotificationsActive'
 
 import DrawerMDNotification from './_drawerMDNotification'
@@ -36,35 +38,49 @@ class DrawerMD extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-        <DrawerMDSetup />
 
-        <DrawerMDNotification />
-
-        <ListItem button>
+        <ListItem button onClick={this.handleClick}>
           <ListItemIcon>
             <NotificationsActive />
           </ListItemIcon>
-          <ListItemText inset primary="Video Recording" />
+          <ListItemText inset primary="Alarm Events" />
+          {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
 
-        <DrawerMDSDCard />
-        <DrawerMDAlarmFTP />
-        <DrawerMDRouterFTP />
+        <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
 
-        <ListItem button>
-          <ListItemIcon>
-            <NotificationsActive />
-          </ListItemIcon>
-          <ListItemText inset primary="FTP Server Setup" />
-        </ListItem>
-        <ListItem button>
-          <ListItemIcon>
-            <NotificationsActive />
-          </ListItemIcon>
-          <ListItemText inset primary="Alarmserver" />
-        </ListItem>
+          <DrawerMDSetup />
 
-        <DrawerMDCloud />
+          <DrawerMDNotification />
+
+          <ListItem button>
+            <ListItemIcon>
+              <NotificationsActive />
+            </ListItemIcon>
+            <ListItemText inset primary="Video Recording" />
+          </ListItem>
+
+          <DrawerMDSDCard />
+          <DrawerMDAlarmFTP />
+          <DrawerMDRouterFTP />
+
+          <ListItem button>
+            <ListItemIcon>
+              <NotificationsActive />
+            </ListItemIcon>
+            <ListItemText inset primary="FTP Server Setup" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <NotificationsActive />
+            </ListItemIcon>
+            <ListItemText inset primary="Alarmserver" />
+          </ListItem>
+
+          <DrawerMDCloud />
+
+        </Collapse>
+
       </div>
     );
   }

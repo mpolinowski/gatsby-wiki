@@ -17,10 +17,10 @@ import MenuIcon from 'material-ui-icons/Menu'
 import MenuItem from 'material-ui/Menu/MenuItem'
 import ListSubheader from 'material-ui/List/ListSubheader'
 
-import Logo from '../static/instar_250x65.png'
+import Logo from '../static/instar_255x70.png'
 import DrawerMain from '../navigation/DrawerMain'
 
-const drawerWidth = 250;
+const drawerWidth = 255;
 
 const styles = theme => ({
   root: {
@@ -47,10 +47,11 @@ const styles = theme => ({
   },
   drawer: {
     bottom: 0,
+    height: '100%'
   },
   drawerHeader: theme.mixins.toolbar,
   drawerPaper: {
-    width: 250,
+    width: 255,
     [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       position: 'relative',

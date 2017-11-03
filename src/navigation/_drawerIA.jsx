@@ -4,6 +4,9 @@ import { withStyles } from 'material-ui/styles'
 import ListSubheader from 'material-ui/List/ListSubheader'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import PublicIcon from 'material-ui-icons/Public'
+import Collapse from 'material-ui/transitions/Collapse'
+import ExpandLess from 'material-ui-icons/ExpandLess'
+import ExpandMore from 'material-ui-icons/ExpandMore'
 import Divider from 'material-ui/Divider'
 
 import DrawerIADDNSService from './_drawerIADDNSService'
@@ -33,24 +36,37 @@ class DrawerIA extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-        <ListItem button>
+
+        <ListItem button onClick={this.handleClick}>
           <ListItemIcon>
             <PublicIcon />
           </ListItemIcon>
-          <ListItemText inset primary="The P2P Service" />
+          <ListItemText inset primary="Remote Control" />
+          {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
 
-        <DrawerIADDNSService />
-        <DrawerIAPortForwarding />
+        <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
 
-        <ListItem button>
-          <ListItemIcon>
-            <PublicIcon />
-          </ListItemIcon>
-          <ListItemText inset primary="Mobile Access" />
-        </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <PublicIcon />
+            </ListItemIcon>
+            <ListItemText inset primary="The P2P Service" />
+          </ListItem>
 
-        <DrawerIAThirdDDNS />
+          <DrawerIADDNSService />
+          <DrawerIAPortForwarding />
+
+          <ListItem button>
+            <ListItemIcon>
+              <PublicIcon />
+            </ListItemIcon>
+            <ListItemText inset primary="Mobile Access" />
+          </ListItem>
+
+          <DrawerIAThirdDDNS />
+
+        </Collapse>
 
       </div>
     );
