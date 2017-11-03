@@ -3,7 +3,6 @@ import Link from 'gatsby-link'
 import elasticsearch from 'elasticsearch'
 
 import { withStyles } from 'material-ui/styles'
-import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
 import Grid from 'material-ui/Grid'
 import Button from 'material-ui/Button'
 

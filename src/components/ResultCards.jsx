@@ -1,35 +1,17 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import { withStyles } from 'material-ui/styles'
 import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
 import Button from 'material-ui/Button'
 import Typography from 'material-ui/Typography'
 import Grid from 'material-ui/Grid'
 
-const cardStyle = {
-  maxWidth: 345,
-}
-
-const mediaStyle = {
-  height: 200,
-}
-
-const styles = theme => ({
-  cardStyle: {
-    maxWidth: 345,
-  },
-  mediaStyle: {
-    height: 200,
-  }
-});
-
 const ResultCards = ({image, title, abstract, link}) => (
 
     <Grid item xs={12} sm={6} lg={4}>
-      <Card className={cardStyle}>
+      <Card style={{ maxWidth: 345 }}>
         <CardMedia
-          className={mediaStyle}
+          style={{ height: 200 }}
           image={image}
           title={abstract}
         />
@@ -55,4 +37,4 @@ const ResultCards = ({image, title, abstract, link}) => (
     </Grid>
 )
 
-export default withStyles(styles)(ResultCards);
+export default ResultCards
