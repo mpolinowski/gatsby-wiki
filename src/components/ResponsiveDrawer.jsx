@@ -20,7 +20,7 @@ import ListSubheader from 'material-ui/List/ListSubheader'
 import Logo from '../static/instar_250x65.png'
 import DrawerMain from '../navigation/DrawerMain'
 
-const drawerWidth = 270;
+const drawerWidth = 250;
 
 const styles = theme => ({
   root: {
@@ -45,13 +45,16 @@ const styles = theme => ({
       display: 'none',
     },
   },
+  drawer: {
+    bottom: 0,
+  },
   drawerHeader: theme.mixins.toolbar,
   drawerPaper: {
     width: 250,
     [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       position: 'relative',
-      bottom: 0,
+      height: '100%',
     }
   },
   input: {
@@ -105,6 +108,7 @@ class ResponsiveDrawer extends React.Component {
             type="temporary"
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
             open={this.state.mobileOpen}
+            className={classes.drawer}
             classes={{
               paper: classes.drawerPaper,
             }}

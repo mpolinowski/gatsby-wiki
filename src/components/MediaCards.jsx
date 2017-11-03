@@ -107,6 +107,59 @@ function MediaCards(props) {
             </CardActions>
           </Card>
         </Grid>
+
+        <Grid item xs={12} sm={6} lg={4}>
+          <Card className={classes.card}>
+            <CardMedia
+              className={classes.media}
+              image={Paella}
+              title="Good Eats"
+            />
+            <CardContent>
+              <Typography type="headline" component="h2">
+                Paella
+              </Typography>
+              <Typography component="p">
+                Many non-Spaniards view paella as Spain's national dish, but most Spaniards consider it to be a regional Valencian dish.
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button dense color="primary">
+                Share
+              </Button>
+              <Button dense color="primary">
+                Learn More
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
+
+        <Grid item xs={12} sm={6} lg={4}>
+          <Card className={classes.card}>
+            <CardMedia
+              className={classes.media}
+              image={Reptile}
+              title="Contemplative Reptile"
+            />
+            <CardContent>
+              <Typography type="headline" component="h2">
+                Lizard
+              </Typography>
+              <Typography component="p">
+                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                across all continents except Antarctica
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button dense color="primary">
+                Share
+              </Button>
+              <Button dense color="primary">
+                Learn More
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
       </Grid>
     </div>
   );

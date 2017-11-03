@@ -4,7 +4,7 @@ import { withStyles } from 'material-ui/styles'
 import ListSubheader from 'material-ui/List/ListSubheader'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
-import SendIcon from 'material-ui-icons/Send'
+import SettingsIcon from 'material-ui-icons/Settings'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
 import NavigateNext from 'material-ui-icons/NavigateNext'
@@ -28,7 +28,7 @@ class DrawerPIndoorCameras extends React.Component {
       <div>
         <ListItem button onClick={this.handleClick}>
           <ListItemIcon>
-            <SendIcon />
+            <SettingsIcon />
           </ListItemIcon>
           <ListItemText inset primary="WebUI and Firmware Update" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}

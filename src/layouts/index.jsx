@@ -12,8 +12,6 @@ import './index.css'
 const styles = theme => ({
   root: {
     width: '100%',
-    zIndex: 1,
-    overflow: 'hidden',
   },
   appFrame: {
     display: 'flex',
@@ -22,7 +20,6 @@ const styles = theme => ({
   content: {
     backgroundColor: theme.palette.background.default,
     width: '100%',
-    height: '100%',
     padding: theme.spacing.unit * 3,
     height: 'calc(100% - 56px)',
     marginTop: 56,

@@ -4,9 +4,7 @@ import { withStyles } from 'material-ui/styles'
 import ListSubheader from 'material-ui/List/ListSubheader'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
-import InboxIcon from 'material-ui-icons/MoveToInbox'
-import DraftsIcon from 'material-ui-icons/Drafts'
-import SendIcon from 'material-ui-icons/Send'
+import SettingsIcon from 'material-ui-icons/Settings'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
 import Divider from 'material-ui/Divider'
@@ -45,7 +43,7 @@ class DrawerIA extends React.Component {
 
         <ListItem button>
           <ListItemIcon>
-            <SendIcon />
+            <SettingsIcon />
           </ListItemIcon>
           <ListItemText inset primary="Lenses" />
         </ListItem>
@@ -55,49 +53,49 @@ class DrawerIA extends React.Component {
 
         <ListItem button>
           <ListItemIcon>
-            <SendIcon />
+            <SettingsIcon />
           </ListItemIcon>
           <ListItemText inset primary="IN-LAN" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <SendIcon />
+            <SettingsIcon />
           </ListItemIcon>
           <ListItemText inset primary="IN-PoE" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <SendIcon />
+            <SettingsIcon />
           </ListItemIcon>
           <ListItemText inset primary="IN-Route" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <SendIcon />
+            <SettingsIcon />
           </ListItemIcon>
           <ListItemText inset primary="IN-Motion" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <SendIcon />
+            <SettingsIcon />
           </ListItemIcon>
           <ListItemText inset primary="IN-Frared" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <SendIcon />
+            <SettingsIcon />
           </ListItemIcon>
           <ListItemText inset primary="IN-Mikro" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <SendIcon />
+            <SettingsIcon />
           </ListItemIcon>
           <ListItemText inset primary="Downloads" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <SendIcon />
+            <SettingsIcon />
           </ListItemIcon>
           <ListItemText inset primary="Usermanuals" />
         </ListItem>
