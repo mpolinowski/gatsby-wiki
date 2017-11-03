@@ -7,6 +7,7 @@ import Button from 'material-ui/Button'
 
 import FixedTabs from '../../components/FixedTabs'
 import ScrollableTabs from '../../components/ScrollableTabs'
+import MediaCards from '../../components/MediaCards'
 
 const nestedroutes = ({data}) => (
   <div>
@@ -16,6 +17,7 @@ const nestedroutes = ({data}) => (
     <h2>Tabbed Navigation Elements</h2>
     <FixedTabs />
     <ScrollableTabs />
+    <MediaCards />
   </div>
 )
 

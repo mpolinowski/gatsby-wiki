@@ -3,28 +3,20 @@ import React from 'react'
 import { withStyles } from 'material-ui/styles'
 import ListSubheader from 'material-ui/List/ListSubheader'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
-import Collapse from 'material-ui/transitions/Collapse'
-import InboxIcon from 'material-ui-icons/MoveToInbox'
-import DraftsIcon from 'material-ui-icons/Drafts'
-import SendIcon from 'material-ui-icons/Send'
-import ExpandLess from 'material-ui-icons/ExpandLess'
-import ExpandMore from 'material-ui-icons/ExpandMore'
 import Divider from 'material-ui/Divider'
-import StarBorder from 'material-ui-icons/StarBorder'
 
+import DrawerP from './_drawerP'
+import DrawerQI from './_drawerQI'
 import DrawerMD from './_drawerMD'
 import DrawerIA from './_drawerIA'
-import DrawerIADDNSService from './_drawerIADDNSService'
+import DrawerAU from './_drawerAU'
 
 const styles = theme => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    background: "inherit",
-    color: "white",
-  },
   nested: {
     paddingLeft: theme.spacing.unit * 4,
+  },
+  listSubheader: {
+    background: 'white',
   },
 });
 
@@ -39,15 +31,32 @@ class NestedList extends React.Component {
     const { classes } = this.props;
     return (
       <div>
+        <List subheader={<ListSubheader className={classes.listSubheader}>Products</ListSubheader>}>
+          <DrawerP />
+        </List>
 
-        <List subheader={<ListSubheader>Motion Detection</ListSubheader>}>
+        <Divider />
+
+        <List subheader={<ListSubheader className={classes.listSubheader}>Quick Installation</ListSubheader>}>
+          <DrawerQI />
+        </List>
+
+        <Divider />
+
+        <List subheader={<ListSubheader className={classes.listSubheader}>Motion Detection</ListSubheader>}>
           <DrawerMD />
         </List>
 
         <Divider />
 
-        <List subheader={<ListSubheader>Remote Access</ListSubheader>}>
+        <List subheader={<ListSubheader className={classes.listSubheader}>Remote Access</ListSubheader>}>
           <DrawerIA />
+        </List>
+
+        <Divider />
+
+        <List subheader={<ListSubheader className={classes.listSubheader}>Advanced User</ListSubheader>}>
+          <DrawerAU />
         </List>
       </div>
     );

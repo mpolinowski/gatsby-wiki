@@ -4,13 +4,7 @@ import { withStyles } from 'material-ui/styles'
 import ListSubheader from 'material-ui/List/ListSubheader'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
-import InboxIcon from 'material-ui-icons/MoveToInbox'
-import DraftsIcon from 'material-ui-icons/Drafts'
-import SendIcon from 'material-ui-icons/Send'
-import ExpandLess from 'material-ui-icons/ExpandLess'
-import ExpandMore from 'material-ui-icons/ExpandMore'
-import Divider from 'material-ui/Divider'
-import StarBorder from 'material-ui-icons/StarBorder'
+import NotificationsActive from 'material-ui-icons/NotificationsActive'
 
 import DrawerMDNotification from './_drawerMDNotification'
 import DrawerMDSetup from './_drawerMDSetup'
@@ -48,7 +42,7 @@ class DrawerMD extends React.Component {
 
         <ListItem button>
           <ListItemIcon>
-            <SendIcon />
+            <NotificationsActive />
           </ListItemIcon>
           <ListItemText inset primary="Video Recording" />
         </ListItem>
@@ -59,13 +53,13 @@ class DrawerMD extends React.Component {
 
         <ListItem button>
           <ListItemIcon>
-            <DraftsIcon />
+            <NotificationsActive />
           </ListItemIcon>
           <ListItemText inset primary="FTP Server Setup" />
         </ListItem>
         <ListItem button>
           <ListItemIcon>
-            <DraftsIcon />
+            <NotificationsActive />
           </ListItemIcon>
           <ListItemText inset primary="Alarmserver" />
         </ListItem>

@@ -1,15 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import { withStyles } from 'material-ui/styles';
-import ListSubheader from 'material-ui/List/ListSubheader';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import Collapse from 'material-ui/transitions/Collapse';
-import InboxIcon from 'material-ui-icons/MoveToInbox';
-import DraftsIcon from 'material-ui-icons/Drafts';
-import SendIcon from 'material-ui-icons/Send';
-import ExpandLess from 'material-ui-icons/ExpandLess';
-import ExpandMore from 'material-ui-icons/ExpandMore';
-import StarBorder from 'material-ui-icons/StarBorder';
+import { withStyles } from 'material-ui/styles'
+import ListSubheader from 'material-ui/List/ListSubheader'
+import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
+import Collapse from 'material-ui/transitions/Collapse'
+import ExpandLess from 'material-ui-icons/ExpandLess'
+import ExpandMore from 'material-ui-icons/ExpandMore'
+import NotificationsActive from 'material-ui-icons/NotificationsActive'
+import NavigateNext from 'material-ui-icons/NavigateNext'
 
 const styles = theme => ({
   root: {
@@ -36,7 +34,7 @@ class DrawerMDRouterFTP extends React.Component {
       <div>
         <ListItem button onClick={this.handleClick}>
           <ListItemIcon>
-            <InboxIcon />
+            <NotificationsActive />
           </ListItemIcon>
           <ListItemText inset primary="INSTAR Cloud" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
@@ -44,37 +42,37 @@ class DrawerMDRouterFTP extends React.Component {
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder />
+              <NavigateNext />
             </ListItemIcon>
             <ListItemText inset primary="Create User Account" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder />
+              <NavigateNext />
             </ListItemIcon>
             <ListItemText inset primary="Storage" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder />
+              <NavigateNext />
             </ListItemIcon>
             <ListItemText inset primary="User" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder />
+              <NavigateNext />
             </ListItemIcon>
             <ListItemText inset primary="Administration" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder />
+              <NavigateNext />
             </ListItemIcon>
             <ListItemText inset primary="Alarm Recording" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder />
+              <NavigateNext />
             </ListItemIcon>
             <ListItemText inset primary="Camera Sets" />
           </ListItem>

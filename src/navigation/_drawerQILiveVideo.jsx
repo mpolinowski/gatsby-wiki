@@ -1,27 +1,21 @@
-import React from 'react';
+import React from 'react'
 
 import { withStyles } from 'material-ui/styles'
 import ListSubheader from 'material-ui/List/ListSubheader'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
+import BuildIcon from 'material-ui-icons/Build'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
-import NotificationsActive from 'material-ui-icons/NotificationsActive'
 import NavigateNext from 'material-ui-icons/NavigateNext'
 
 const styles = theme => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    background: "inherit",
-    color: "white",
-  },
   nested: {
     paddingLeft: theme.spacing.unit * 4,
   },
 });
 
-class DrawerMDSDCard extends React.Component {
+class DrawerQILiveVideo extends React.Component {
   state = { open: false };
 
   handleClick = () => {
@@ -34,9 +28,9 @@ class DrawerMDSDCard extends React.Component {
       <div>
         <ListItem button onClick={this.handleClick}>
           <ListItemIcon>
-            <NotificationsActive />
+            <BuildIcon />
           </ListItemIcon>
-          <ListItemText inset primary="SD Card Access" />
+          <ListItemText inset primary="Live Video (Flash)" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
@@ -44,43 +38,67 @@ class DrawerMDSDCard extends React.Component {
             <ListItemIcon>
               <NavigateNext />
             </ListItemIcon>
-            <ListItemText inset primary="Bitkinex" />
+            <ListItemText inset primary="ActiveX" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <NavigateNext />
             </ListItemIcon>
-            <ListItemText inset primary="CuteFTP" />
+            <ListItemText inset primary="QuickTime" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <NavigateNext />
             </ListItemIcon>
-            <ListItemText inset primary="DownThemAll" />
+            <ListItemText inset primary="MJPEG" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <NavigateNext />
             </ListItemIcon>
-            <ListItemText inset primary="Interarchy" />
+            <ListItemText inset primary="Avast Internet Security" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <NavigateNext />
             </ListItemIcon>
-            <ListItemText inset primary="DeepVacuum" />
+            <ListItemText inset primary="Kaspersky 2013" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <NavigateNext />
             </ListItemIcon>
-            <ListItemText inset primary="SiteSucker" />
+            <ListItemText inset primary="Kaspersky 2014" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <NavigateNext />
             </ListItemIcon>
-            <ListItemText inset primary="SimpleWget" />
+            <ListItemText inset primary="Kaspersky 2017" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <NavigateNext />
+            </ListItemIcon>
+            <ListItemText inset primary="AVG Internet Security" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <NavigateNext />
+            </ListItemIcon>
+            <ListItemText inset primary="AVIRA Security" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <NavigateNext />
+            </ListItemIcon>
+            <ListItemText inset primary="F-Secure Security" />
+          </ListItem>
+          <ListItem button className={classes.nested}>
+            <ListItemIcon>
+              <NavigateNext />
+            </ListItemIcon>
+            <ListItemText inset primary="GDATA Security" />
           </ListItem>
         </Collapse>
       </div>
@@ -88,4 +106,4 @@ class DrawerMDSDCard extends React.Component {
   }
 }
 
-export default withStyles(styles)(DrawerMDSDCard);
+export default withStyles(styles)(DrawerQILiveVideo);

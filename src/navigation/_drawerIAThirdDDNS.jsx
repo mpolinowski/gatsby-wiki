@@ -6,11 +6,11 @@ import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
 import InboxIcon from 'material-ui-icons/MoveToInbox'
 import DraftsIcon from 'material-ui-icons/Drafts'
-import SendIcon from 'material-ui-icons/Send'
+import PublicIcon from 'material-ui-icons/Public'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
 import Divider from 'material-ui/Divider'
-import StarBorder from 'material-ui-icons/StarBorder'
+import NavigateNext from 'material-ui-icons/NavigateNext'
 
 const styles = theme => ({
   root: {
@@ -37,7 +37,7 @@ class DrawerIAThirdDDNS extends React.Component {
       <div>
         <ListItem button onClick={this.handleClick}>
           <ListItemIcon>
-            <DraftsIcon />
+            <PublicIcon />
           </ListItemIcon>
           <ListItemText inset primary="Third-party DDNS" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
@@ -45,19 +45,19 @@ class DrawerIAThirdDDNS extends React.Component {
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder />
+              <NavigateNext />
             </ListItemIcon>
             <ListItemText inset primary="No-IP" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder />
+              <NavigateNext />
             </ListItemIcon>
             <ListItemText inset primary="Selfhost" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
-              <StarBorder />
+              <NavigateNext />
             </ListItemIcon>
             <ListItemText inset primary="DDNSS" />
           </ListItem>

@@ -4,24 +4,19 @@ import { withStyles } from 'material-ui/styles'
 import ListSubheader from 'material-ui/List/ListSubheader'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import Collapse from 'material-ui/transitions/Collapse'
+import SecurityIcon from 'material-ui-icons/Security'
 import ExpandLess from 'material-ui-icons/ExpandLess'
 import ExpandMore from 'material-ui-icons/ExpandMore'
-import NotificationsActive from 'material-ui-icons/NotificationsActive'
+import Divider from 'material-ui/Divider'
 import NavigateNext from 'material-ui-icons/NavigateNext'
 
 const styles = theme => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    background: "inherit",
-    color: "white",
-  },
   nested: {
     paddingLeft: theme.spacing.unit * 4,
   },
 });
 
-class DrawerMDRouterFTP extends React.Component {
+class DrawerAUWebsiteIntegration extends React.Component {
   state = { open: false };
 
   handleClick = () => {
@@ -34,9 +29,9 @@ class DrawerMDRouterFTP extends React.Component {
       <div>
         <ListItem button onClick={this.handleClick}>
           <ListItemIcon>
-            <NotificationsActive />
+            <SecurityIcon />
           </ListItemIcon>
-          <ListItemText inset primary="Router as FTP Server" />
+          <ListItemText inset primary="Website Integration" />
           {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={this.state.open} transitionDuration="auto" unmountOnExit>
@@ -44,31 +39,19 @@ class DrawerMDRouterFTP extends React.Component {
             <ListItemIcon>
               <NavigateNext />
             </ListItemIcon>
-            <ListItemText inset primary="AVM Fritzbox" />
+            <ListItemText inset primary="HD Cameras" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <NavigateNext />
             </ListItemIcon>
-            <ListItemText inset primary="Telekom Speedport" />
+            <ListItemText inset primary="Cambozola" />
           </ListItem>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <NavigateNext />
             </ListItemIcon>
-            <ListItemText inset primary="QNAP" />
-          </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <NavigateNext />
-            </ListItemIcon>
-            <ListItemText inset primary="WD MyCloud" />
-          </ListItem>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <NavigateNext />
-            </ListItemIcon>
-            <ListItemText inset primary="Synology" />
+            <ListItemText inset primary="OIPCM (PHP)" />
           </ListItem>
         </Collapse>
       </div>
@@ -76,4 +59,4 @@ class DrawerMDRouterFTP extends React.Component {
   }
 }
 
-export default withStyles(styles)(DrawerMDRouterFTP);
+export default withStyles(styles)(DrawerAUWebsiteIntegration)
