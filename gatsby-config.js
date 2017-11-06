@@ -18,12 +18,12 @@ module.exports = {
       {
       resolve: `gatsby-plugin-manifest`,
         options: {
-          name: "Gatsby Wiki",
-          short_name: "Gatsby Wiki",
-          start_url: "/",
-          background_color: "snow",
-          theme_color: "darkslategray",
-          display: "minimal-ui",
+          name: 'Gatsby Wiki',
+          short_name: 'Gatsby Wiki',
+          start_url: '/',
+          background_color: 'snow',
+          theme_color: 'darkslategray',
+          display: 'minimal-ui',
           icons: [
             {
               // Everything in /static will be copied to an equivalent
@@ -66,7 +66,8 @@ module.exports = {
             {
               resolve: `gatsby-remark-images`,
               options: {
-                maxWidth: 590,
+                maxWidth: 930,
+                sizeByPixelDensity: true,
               },
             },
             {
@@ -75,7 +76,7 @@ module.exports = {
                 wrapperStyle: `margin-bottom: 1.0725rem`,
               },
             },
-            "gatsby-remark-copy-linked-files",
+            'gatsby-remark-copy-linked-files',
           ],
         },
       },
