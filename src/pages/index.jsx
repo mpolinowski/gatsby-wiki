@@ -9,7 +9,7 @@ import Counter from './../components/Counter'
 const IndexPage = ({data}) => (
   <div>
     <h1>Welcome to our new Gatsby site.</h1>
-    <p>Is this the right framework to rebuild our Wiki on? I don't know yet...</p>
+    <p>Is this the right framework to rebuild our Wiki on? I am starting to become more comfortable with the idea ...</p>
     <IndexButtons />
     <br/><br/><br/><br/>
       <h2>Markdown Index</h2>
