@@ -20,7 +20,8 @@ gatsby new gatsby-wiki
 10. [Adding File Data](#10-adding-file-data)
 11. [Working with Markdown](#11-working-with-markdown)
 12. [Adding Material-UI](#12-adding-material-ui)
-13. [Build the Static Page](#xx-build-the-static-page)
+13. [Adding Elasticsearch](#13-adding-elasticsearch)
+14. [Build the Static Page](#xx-build-the-static-page)
 ---
 
 
@@ -805,6 +806,153 @@ render(<AppWithButton />, document.querySelector('#app'));
 ```
 
 
+
+## 13 Adding Elasticsearch
+
+One of the pre-requisites for this project is, that we need to create a lightning-fast interface for [our ElasticSearch Index](https://github.com/mpolinowski/express-static/tree/master/elasticsearch). We already build the [ES6 Class component](https://github.com/mpolinowski/elasticsearch-react-example) for it. And adding it to Gatsby / Material-UI turned out to be surprisingly straight-forward.
+
+First, add _./src/pages/search/jsx_ and modify the [ElasticSearch Component](https://github.com/mpolinowski/elasticsearch-react-example) to play nice with our UI:
+
+```js
+import React, { Component } from 'react'
+import Link from 'gatsby-link'
+import elasticsearch from 'elasticsearch'
+
+import { withStyles } from 'material-ui/styles'
+import Grid from 'material-ui/Grid'
+import Button from 'material-ui/Button'
+
+import ResultCards from '../components/ResultCards'
+
+const connectionString = 'localhost:9200'
+const _index = 'wiki2_de_2017_09_09'
+const _type = 'article'
+
+let client = new elasticsearch.Client({
+  host: connectionString,
+  log: "trace"
+})
+
+const rootStyle = {
+    flexGrow: 1,
+    marginTop: 30,
+  }
+
+export class Search extends Component {
+  constructor(props) {
+    super(props)
+      this.state = { results: [] };
+      this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(event) {
+      const search_query = event.target.value;
+
+      client.search({
+  			index: _index,
+  			type: _type,
+  			body: {
+  				query: {
+  						multi_match: {
+  								query: search_query,
+  								fields: ['title^100', 'tags^100', 'abstract^20', 'description^10', 'chapter^5', 'title2^10', 'description2^10'],
+  								fuzziness: 1,
+  							},
+  					},
+  			},
+  		}).then(function(body) {
+            this.setState({ results: body.hits.hits });
+          }.bind(this),
+          function(error) {
+            console.trace(error.message);
+          }
+        );
+    }
+
+    render() {
+      return (
+        <div className="container">
+          <input type="text" onChange={this.handleChange} />
+          <SearchResults results={this.state.results} />
+        </div>
+      );
+    }
+}
+
+const SearchResults = ({results}) => (
+  <div className="search_results">
+  <br/><hr/>
+
+  <div className={rootStyle}>
+    <Grid container spacing={24}>
+      {results.map((result , i) =>
+        <ResultCards key={i}
+                     image={result._source.image}
+                     title={result._source.title2}
+                     link={result._source.link}
+                     abstract={result._source.abstract}/>
+      )}
+
+      </Grid>
+    </div>
+    <br/><br/><Link to="/" style={{ textDecoration: 'none' }}><Button raised color="primary">Go back to the homepage</Button></Link>
+  </div>
+)
+
+export default Search
+```
+
+The \<SearchResults /\> component iterates over the Material UI card inside \<ResultCards /\>:
+
+
+```js
+import React from 'react'
+import Link from 'gatsby-link'
+
+import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
+import Button from 'material-ui/Button'
+import Typography from 'material-ui/Typography'
+import Grid from 'material-ui/Grid'
+
+const ResultCards = ({image, title, abstract, link}) => (
+
+    <Grid item xs={12} sm={6} lg={4}>
+      <Card style={{ maxWidth: 345 }}>
+        <CardMedia
+          style={{ height: 200 }}
+          image={image}
+          title={abstract}
+        />
+        <CardContent>
+          <Typography type="headline" component="h4" style={{ minHeight: 60, marginBottom: "10px" }}>
+            {title}
+          </Typography>
+          <Typography component="p" style={{ minHeight: 50, marginBottom: "10px" }}>
+            {abstract}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Link to={link} style={{ textDecoration: 'none' }}>
+            <Button dense color="primary">
+              Read
+            </Button>
+          </Link>
+          <Button dense color="primary">
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
+    </Grid>
+)
+
+export default ResultCards
+```
+
+
+and adds the results from the ElasticSearch JSON response - giving us a nice responsive card grid (the images used below are not inside this repository - just add a few PNG files (597x382) to _./public/images/Search_, named according to the image URL defined inside [our ElasticSearch Index](https://github.com/mpolinowski/express-static/tree/master/elasticsearch):
+
+
+![](./gatsby_12.png)
 
 
 
