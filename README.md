@@ -659,7 +659,7 @@ Save and restart your app - then open _http://localhost:8000/md-posts_ inside yo
 
 ### Nested Routes with Markdown
 
-To create children post for the _./src/pages/FirstMDpost/index.md_ file, we can simply add more files to the folder and define nested routes inside their frontmatter - e.g. _./src/pages/FirstMDpost/myfirstpost.md_:
+To create children post for the _./src/pages/FirstMDpost/index.md_ file, we can simply add more files to the folder and define nested routes inside their frontmatter - e.g.  _./src/pages/FirstMDpost/myfirstpost.md_:
 
 
 ```
@@ -757,7 +757,7 @@ export const pageQuery = graphql`
 ### Catching Links from Markdown
 
 
-Once you start adding links inside your Markdown files, you will notice that clicking them will reload your application - which isn't good :( But no worries here is [gatsby-plugin-catch-links](https://www.gatsbyjs.org/packages/gatsby-plugin-catch-links/) coming to your rescue! And the nice thing about it - you just install it, add to your Gatsby plugins inside _./gatsby-config.js_ and it just works:
+Once you start adding links inside your Markdown files, you will notice that clicking them will reload your application - which isn't good :( But no worries here is [gatsby-plugin-catch-links](https://www.gatsbyjs.org/packages/gatsby-plugin-catch-links/) coming to your rescue! And the nice thing about it - you install it, add to your Gatsby plugins inside _./gatsby-config.js_ and it just works:
 
 ```
 npm install --save gatsby-plugin-catch-links
