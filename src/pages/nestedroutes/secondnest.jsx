@@ -8,7 +8,6 @@ import Button from 'material-ui/Button'
 import Autocomplete from '../../components/Autocomplete'
 import FormInput from '../../components/FormInput'
 
-
 class secondnest extends React.Component {
 
   state = {
@@ -25,22 +24,30 @@ class secondnest extends React.Component {
   }
 
   render () {
-    return (
-    <div>
-      <h2>Autocomplete Input</h2>
-      <p>This input field uses <Link href="http://react-autosuggest.js.org">react-autosuggest</Link> to complete your input compared to a hard-coded list of countries starting with the letter A.</p>
-      <Autocomplete />
+    return <div>
+        <h2>Autocomplete Input</h2>
+        <p>
+          This input field uses <a href="http://react-autosuggest.js.org" target="_blank">react-autosuggest</a> to complete your input compared to a hard-coded list of countries starting with the letter A.
+        </p>
+        <Autocomplete />
 
-      <h2>Address Form</h2>
-      <p>This form adds input to component state. Submit clears the input fields, but keeps values in state - the default browser reload is prevented</p>
-      <FormInput onChange={fields => this.onChange(fields)} />
-      <p>
-        {JSON.stringify(this.state.fields, null, 2)}
-      </p><br/><br/>
+        <h2>Address Form</h2>
+        <p>
+          This form adds input to component state. Submit clears the input
+          fields, but keeps values in state - the default browser reload is
+          prevented
+        </p>
+        <FormInput onChange={fields => this.onChange(fields)} />
+        <p>{JSON.stringify(this.state.fields, null, 2)}</p>
+        <br />
+        <br />
 
-      <Link to="/nestedroutes/" style={{ textDecoration: 'none' }}><Button raised color="primary">Go back</Button></Link>
-    </div>
-    )
+        <Link to="/nestedroutes/" style={{ textDecoration: "none" }}>
+          <Button raised color="primary">
+            Go back
+          </Button>
+        </Link>
+      </div>;
   }
 }
 
