@@ -20,8 +20,7 @@ gatsby new gatsby-wiki
 10. [Adding File Data](#10-adding-file-data)
 11. [Working with Markdown](#11-working-with-markdown)
 12. [Adding Material-UI](#12-adding-material-ui)
-
-XX. [Build the Static Page](#xx-build-the-static-page)
+13. [Build the Static Page](#xx-build-the-static-page)
 ---
 
 
