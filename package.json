@@ -9,6 +9,7 @@
     "gatsby": "^1.9.100",
     "gatsby-image": "^1.0.19",
     "gatsby-link": "^1.6.24",
+    "gatsby-plugin-catch-links": "^1.0.9",
     "gatsby-plugin-manifest": "^1.0.8",
     "gatsby-plugin-nprogress": "^1.0.7",
     "gatsby-plugin-offline": "^1.0.10",
