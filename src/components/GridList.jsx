@@ -16,8 +16,8 @@ const styles = theme => ({
     background: theme.palette.background.paper,
   },
   gridList: {
-    width: 500,
-    height: 450,
+    width: 900,
+    height: 800,
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
   },
@@ -122,7 +122,7 @@ function TitlebarGridList(props) {
   return (
     <div className={classes.container}>
       <GridList cellHeight={180} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
+        <GridListTile key="Subheader" cols={1} style={{ height: 'auto' }}>
           <Subheader>December</Subheader>
         </GridListTile>
         {tileData.map(tile => (
